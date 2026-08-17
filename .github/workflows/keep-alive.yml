@@ -1,0 +1,12 @@
+name: Keep HF Space Alive
+on:
+  schedule:
+    - cron: "*/25 * * * *"   # every 25 minutes
+  workflow_dispatch:          # lets you trigger it manually too
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping HF Space health endpoint
+        run: |
+          curl -sSf https://kavinduperera-portofolio.hf.space/health || exit 1
