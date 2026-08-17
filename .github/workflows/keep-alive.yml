@@ -1,8 +1,10 @@
 name: Keep HF Space Alive
+
 on:
   schedule:
-    - cron: "*/25 * * * *"   # every 25 minutes
+    - cron: "*/5 * * * *"   # every 5 minutes
   workflow_dispatch:          # lets you trigger it manually too
+
 jobs:
   ping:
     runs-on: ubuntu-latest
